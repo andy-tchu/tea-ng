@@ -11,6 +11,6 @@ export class OrderService {
   }
 
   createOrder(data: OrderType) {
-    return this.http.post<{ success: boolean, message?: string }>('https://testologia.site/order-tea', data);
+    return this.http.post<{ success: boolean, message?: string }>('https://testologia.ru/order-tea', data);
   }
 }

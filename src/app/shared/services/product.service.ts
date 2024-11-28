@@ -10,7 +10,7 @@ export class ProductService {
 
   getProducts(searchStr: string | undefined): Observable<ProductType[]> {
     if (searchStr) {
-      return this.http.get<ProductType[]>('https://testologia.site/tea',
+      return this.http.get<ProductType[]>('https://testologia.ru/tea',
         {
           params: {search: searchStr},
           observe: 'response',
@@ -27,7 +27,7 @@ export class ProductService {
           })
         );
     } else {
-      return this.http.get<ProductType[]>('https://testologia.site/tea',
+      return this.http.get<ProductType[]>('https://testologia.ru/tea',
         {
           observe: 'response',
         })
@@ -38,10 +38,10 @@ export class ProductService {
   }
 
   getProduct(id: number): Observable<ProductType> {
-    return this.http.get<ProductType>(`https://testologia.site/tea?id=${id}`);
+    return this.http.get<ProductType>(`https://testologia.ru/tea?id=${id}`);
   }
 
   createOrder(data: { product: string, address: string, phone: string }) {
-    return this.http.post<{ success: boolean, message?: string }>('https://testologia.site/order-tea', data);
+    return this.http.post<{ success: boolean, message?: string }>('https://testologia.ru/order-tea', data);
   }
 }
